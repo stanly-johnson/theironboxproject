@@ -17,9 +17,11 @@ void setup()
 
 void loop()
 {
-  while(status_pin==HIGH)
+  //check for ironbox power-on-request
+  while(status_pin==HIGH) 
   {
     time=millis();
+    //power-on the ironbox after starting timer
     digitalWrite(relay_pin,HIGH);
     
     if(signal_pin==HIGH)
